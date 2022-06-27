@@ -9,20 +9,20 @@ const NewProject = () => {
   function createPost(project) {
 
     const url = "http://localhost:5000/projects";
-    // inicializar cost e services
+
     project.cost = 0
     project.services = []
 
     fetch(url, {
       method: "POST",
       headers: {
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
       },
       body: JSON.stringify(project)
     })
     .then((response) => response.json)
     .then((data) => {
-      history.push('/projects', { message: 'Projeto criado com sucesso!' })
+      history('/projects', { message: 'Projeto criado com sucesso!' })
     })
     .catch(err => console.log(err));
 

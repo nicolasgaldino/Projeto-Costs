@@ -8,7 +8,7 @@
 }
 
 .homeContainer h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-bottom: .5rem;
 }
 
@@ -21,11 +21,12 @@
 
 .homeContainer p {
   margin-bottom: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #7b7b7b;
 }
 
 .homeContainer img {
-  width: 25rem;
+  width: 30rem;
   margin: 2rem 0;
 }

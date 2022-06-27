@@ -4,7 +4,7 @@ import Input from '../form/Input';
 import Select from '../form/Select';
 import SubmitButton from '../form/SubmitButton';
 
-const ProjectForm = ({ hanldeSubmit, btnText, projectData }) => {
+const ProjectForm = ({ handleSubmit, btnText, projectData }) => {
 
   // trecho de código que puxa os dados da API usando 'useEffect', e usando 'useState' para rendenrizar as opções a API diremente na página de novos projetos.
   // para iniciar o projeto e carregar os dados do 'db.json', execute 'npm run backend' no terminal
@@ -29,7 +29,7 @@ const ProjectForm = ({ hanldeSubmit, btnText, projectData }) => {
 
   const submit = (event) => {
     event.preventDefault();
-    hanldeSubmit(project);
+    handleSubmit(project);
   }
 
   function handleChange(event) {
