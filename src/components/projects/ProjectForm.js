@@ -6,9 +6,6 @@ import SubmitButton from '../form/SubmitButton';
 
 const ProjectForm = ({ handleSubmit, btnText, projectData }) => {
 
-  // trecho de código que puxa os dados da API usando 'useEffect', e usando 'useState' para rendenrizar as opções a API diremente na página de novos projetos.
-  // para iniciar o projeto e carregar os dados do 'db.json', execute 'npm run backend' no terminal
-
   const [ categories, setCategories ] = React.useState([]);
   const [ project, setProject ] = React.useState(projectData || {});
   const url = "http://localhost:5000/categories";
@@ -69,7 +66,7 @@ const ProjectForm = ({ handleSubmit, btnText, projectData }) => {
         name="category_id"
         text="Selecione a categoria"
         options={ categories }
-        value={ project.category }
+        value={ project.category ? project.category.id : '' }
         handleOnChange={ handleCategory }
         />
         <SubmitButton text={ btnText }/>
