@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem;
   cursor: default;
 }
 
@@ -22,11 +21,11 @@
 
 .homeContainer p {
   margin-bottom: 1.5rem;
+  font-weight: bold;
   color: #7b7b7b;
 }
 
 .homeContainer img {
   width: 25rem;
   margin: 2rem 0;
-  margin-bottom: 9rem;
 }
