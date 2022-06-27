@@ -6,6 +6,7 @@ import NewProject from './components/pages/NewProject';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Container from './components/layout/Container';
+import Projects from './components/pages/Projects';
 
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
       <Navbar />
       <Container customClass="min-height">
         <Routes>
-          <Route path= "/" element={<Home/>}/> 
+          <Route path= "/" element={<Home/>}/>
+          <Route path= "/projects" element={<Projects/>}/>
           <Route path= "/Company" element={<Company/>}/> 
           <Route path= "/Contact" element={<Contact/>}/> 
           <Route path= "/NewProject" element={<NewProject/>}/>    
