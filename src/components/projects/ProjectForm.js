@@ -69,7 +69,7 @@ const ProjectForm = ({ handleSubmit, btnText, projectData }) => {
         name="category_id"
         text="Selecione a categoria"
         options={ categories }
-        value={ project.category ? project.category.id : '' }
+        value={ project.category }
         handleOnChange={ handleCategory }
         />
         <SubmitButton text={ btnText }/>
