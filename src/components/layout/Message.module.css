@@ -1,7 +1,7 @@
 .message {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #000;
+  border: 1px solid var(--black);
   margin: 0 auto;
   text-align: center;
   margin-bottom: 2em;
@@ -9,13 +9,13 @@
 }
 
 .success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
+  color: var(--success);
+  background-color: var(--successBackground);
+  border-color: var(--successBorder);
 }
 
 .error {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
+  color: var(--error);
+  background-color: var(--errorBackground);
+  border-color: var(--errorBorder);
 }

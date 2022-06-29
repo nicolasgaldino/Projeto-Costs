@@ -12,11 +12,11 @@
 
 .formControl input {
   padding: .7rem;
-  border-radius: 0;
+  border-radius: 0.3125rem;
   border: none;
 }
 
 .formControl input::placeholder {
   font-size: 1.1rem;
-  color: #7b7b7b;
+  color: var(--gray);
 }

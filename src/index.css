@@ -1,3 +1,22 @@
+:root {
+  --white: #fff;
+  --boldWhite: #efefef;
+  --black: #000;
+  --gray: #7b7b7b;
+  --boldGray: #222;
+  --yellow: #ffbb33;
+  --success: #155724;
+  --successBackground: #d4edda;
+  --successBorder: #c3e6cb;
+  --error: #721c24;
+  --errorBackground: #f8d7da;
+  --errorBorder: #f5c6cb;
+  --infraColor: #ffaebc;
+  --desenvolvimentoColor: #a0e7e5;
+  --designColor: #b4f8c8;
+  --planejamentoColor: #fbe7c6;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,7 +28,7 @@
 html,
 body,
 #root {
-  background-color: #efefef;
+  background-color: var(--boldWhite);
   height: 100vh;
 }
 
@@ -18,11 +37,11 @@ body,
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #000;
+  background-color: var(--black);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ffbb33;
+  background-color: var(--yellow);
   border-radius: 3.125rem;
 }
 

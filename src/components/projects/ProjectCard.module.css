@@ -1,15 +1,15 @@
 .projectCard {
   padding: 1rem;
-  border: 1px solid #7a7a7a;
+  border: 1px solid var(--gray);
   border-radius: 0.3125rem;
   width: 25%;
   margin: .5%;
 }
 
 .projectCard h4 {
-  background-color: #222;
+  background-color: var(--boldGray);
   border-radius: 0.3125rem;
-  color: #ffbb33;
+  color: var(--yellow);
   padding: .4rem;
   margin-bottom: 1.3rem;
   font-size: 1.3rem;
@@ -17,7 +17,7 @@
 }
 
 .projectCard p {
-  color: #7a7a7a;
+  color: var(--gray);
   font-weight: bold;
   margin-bottom: .5rem;
 }
@@ -50,12 +50,12 @@
 .projectCardActions button {
   text-decoration: none;
   border: none;
-  background-color: #fff;
-  color: #222;
+  background-color: var(--white);
+  color: var(--boldGray);
   font-size: .9rem;
   font-weight: bold;
   padding: .6rem 1rem;
-  border: 1px solid #222;
+  border: 1px solid var(--boldGray);
   border-radius: 0.3125rem;
   display: flex;
   justify-content: center;
@@ -66,8 +66,8 @@
 
 .projectCardActions a:hover,
 .projectCardActions button:hover {
-  background-color: #222;
-  color:  #ffbb33;
+  background-color: var(--boldGray);
+  color:  var(--yellow);
 }
 
 .projectCardActions svg {
@@ -75,17 +75,17 @@
 }
 
 .categoryText .infra{
-  background-color: #ffaebc;
+  background-color: var(--infraColor);
 }
 
 .categoryText .desenvolvimento{
-  background-color: #a0e7e5;
+  background-color: var(--desenvolvimentoColor);
 }
 
 .categoryText .design{
-  background-color: #b4f8c8;
+  background-color: var(--designColor);
 }
 
 .categoryText .planejamento{
-  background-color: #fbe7c6;
+  background-color: var(--planejamentoColor);
 }

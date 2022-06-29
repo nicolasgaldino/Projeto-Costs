@@ -13,6 +13,6 @@
 .formControl select {
   font-size: 1.1rem;
   padding: .7rem;
-  border-radius: 0;
+  border-radius: 0.3125rem;
   border: none;
 }
