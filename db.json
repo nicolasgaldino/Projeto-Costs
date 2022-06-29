@@ -1,12 +1,12 @@
 {
   "projects": [
     {
+      "name": "Infra",
+      "budget": "1234",
       "category": {
         "id": "1",
         "name": "Infra"
       },
-      "name": "Infra",
-      "budget": "12345",
       "cost": 0,
       "services": [],
       "id": 1
@@ -17,7 +17,7 @@
         "name": "Desenvolvimento"
       },
       "name": "Desenvolvimento",
-      "budget": "6789",
+      "budget": "5678",
       "cost": 0,
       "services": [],
       "id": 2
@@ -28,7 +28,7 @@
         "name": "Design"
       },
       "name": "Design",
-      "budget": "1011",
+      "budget": "91011",
       "cost": 0,
       "services": [],
       "id": 3
