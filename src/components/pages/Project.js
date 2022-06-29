@@ -1,5 +1,5 @@
 import React from 'react';
-import { parse, v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 import { useParams } from 'react-router';
 import Loading from '../layout/Loading';
 import Container from '../layout/Container';
@@ -25,7 +25,7 @@ const Project = () => {
     fetch(url, {
       method: 'GET',
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
     })
     .then((response) => response.json())
@@ -50,7 +50,7 @@ const Project = () => {
     fetch(url, {
       method: 'PATCH',
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(project),
     })
@@ -87,7 +87,7 @@ const Project = () => {
     fetch(url, {
       method: 'PATCH',
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(project)
     })
@@ -99,7 +99,35 @@ const Project = () => {
 
   }
 
-  function removeService() {}
+  function removeService(id, cost) {
+    setMessage('')
+
+    const servicesUpdated = project.services.filter(
+      (service) => service.id !== id
+    )
+
+    const projectUpdated = project
+
+    projectUpdated.services = servicesUpdated
+    projectUpdated.cost = parseFloat(servicesUpdated.cost) - parseFloat(cost);
+    const url = `http://localhost:5000/projects/${projectUpdated.id}`;
+
+    fetch(url, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(projectUpdated)
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      setProject(projectUpdated)
+      setServices(servicesUpdated)
+      setMessage('Serviço excluído com sucesso.')
+    })
+    .catch((err) => console.log(err));
+
+  }
 
   function toggleProjectForm() {
     setShowProjectForm(!showProjectForm);
