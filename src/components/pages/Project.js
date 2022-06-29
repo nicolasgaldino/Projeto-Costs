@@ -1,11 +1,13 @@
 import React from 'react';
-import styles from './Project.module.css';
+import { parse, v4 as uuidv4 } from 'uuid'
 import { useParams } from 'react-router';
 import Loading from '../layout/Loading';
 import Container from '../layout/Container';
 import ProjectForm from '../projects/ProjectForm';
 import Message from '../layout/Message';
 import ServiceForm from '../service/ServiceForm';
+import styles from './Project.module.css';
+import ServiceCard from '../service/ServiceCard';
 
 const Project = () => {
 
@@ -15,6 +17,7 @@ const Project = () => {
   const [ showServiceForm, setShowServiceForm ] = React.useState(false);
   const [ message, setMessage ] = React.useState();
   const [ messageType, setMessageType ] = React.useState();
+  const [ services, setServices ] = React.useState([]);
 
   React.useEffect(() => {
     const url = `http://localhost:5000/projects/${id}`;
@@ -28,6 +31,7 @@ const Project = () => {
     .then((response) => response.json())
     .then((data) => {
       setProject(data)
+      setServices(data.services)
     })
     .catch((err) => console.log(err));
   }, [id])
@@ -61,8 +65,41 @@ const Project = () => {
   }
 
   function createService() {
-    
+    setMessage('')
+    const url = `http://localhost:5000/projects/${project.id}`;
+    const lastService = project.services[project.services.length - 1];
+
+    lastService.id = uuidv4()
+
+    const lastServiceCost = lastService.cost
+
+    const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
+
+    if(newCost > parseFloat(project.budget)) {
+      setMessage('Orçamento ultrapassado, por favor verifique o valor do serviço.')
+      setMessageType('error')
+      project.services.pop()
+      return false
+    }
+
+    project.cost = newCost
+
+    fetch(url, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(project)
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      setShowServiceForm(false)
+    })
+    .catch((err) => console.log(err));
+
   }
+
+  function removeService() {}
 
   function toggleProjectForm() {
     setShowProjectForm(!showProjectForm);
@@ -129,7 +166,18 @@ const Project = () => {
             </div>
             <h2>Serviços</h2>
             <Container customClass="start">
-              <p>Itens de serviços</p>
+              {services.length > 0 &&
+                services.map((service) => (
+                  <ServiceCard
+                  id={ service.id }
+                  name={ service.name }
+                  cost={ service.cost }
+                  description={ service.description }
+                  key={ service.id }
+                  handleRemove={ removeService }
+                  />
+                ))
+              } : {services.length === 0 && <p>Não há serviços.</p>}
             </Container>
           </Container>
         </div>
