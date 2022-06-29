@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Infra",
-      "budget": "1234",
+      "budget": "123",
       "category": {
         "id": "1",
         "name": "Infra"
@@ -39,7 +39,7 @@
         "name": "Planejamento"
       },
       "name": "Planejamento",
-      "budget": "1213",
+      "budget": "1500",
       "cost": 0,
       "services": [],
       "id": 4
