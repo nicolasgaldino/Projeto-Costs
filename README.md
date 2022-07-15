@@ -1,0 +1,1 @@
+# Projeto Desenvolvido durante o curso de React gratuito disponível no YouTube do <a href="https://www.youtube.com/c/MatheusBattisti">Matheus Battisti</a>. Não está finalizado, mal está pela metade para dizer a verdade.
